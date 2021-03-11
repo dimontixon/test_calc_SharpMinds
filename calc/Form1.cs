@@ -57,6 +57,7 @@ namespace calc
             {
                 input.Clear();
                 a = 0; b = 0; c = 0;
+                areZnak = false;
             }
         }
 
@@ -79,11 +80,19 @@ namespace calc
                         c = a * b;
                         break;
                     case '/':
-                        c = a / b;
+                        if (b == 0)
+                        {
+                            input.Text = "На 0 не можна ділити!";
+                        }
+                        else
+                        {
+                            c = a / b;
+                        }
                         break;
                 }
                 input.Text = c.ToString();
                 a = 0; b = 0; c = 0;
+                areZnak = false;
             }
         }
 
@@ -94,6 +103,7 @@ namespace calc
             a = 0; b = 0; c = 0;
             input.Text = "";
             label1.Text = "";
+            areZnak = false;
         }
 
         private void button3_Click(object sender, EventArgs e)
