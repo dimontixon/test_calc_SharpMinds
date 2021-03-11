@@ -23,9 +23,10 @@ namespace calc
         {
             input.Text += (sender as Button).Text;
 
+            // Уже є одна крапка в input
             if (input.Text.IndexOf('.') != -1)
             {
-                //Уже есть одна запятая в textBox1
+
                 return;
             }
             
@@ -85,6 +86,7 @@ namespace calc
                 a = 0; b = 0; c = 0;
             }
         }
+
 
         // клікаємо на С (очистити все)
         private void clear_Click(object sender, EventArgs e)
